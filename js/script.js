@@ -185,3 +185,16 @@ tgForm.addEventListener('submit', async function (event) {
         tgSubmitBtn.textContent = 'Получить расчет →';
     }
 });
+
+const heroButton = document.querySelector('.hero__btn');
+
+heroButton.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    document.querySelector('#cta').scrollIntoView({
+        behavior: 'smooth'
+    });
+
+    // Убираем #cta из адреса
+    history.replaceState(null, '', window.location.pathname);
+});
