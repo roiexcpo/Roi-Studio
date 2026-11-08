@@ -1,0 +1,1208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+body {
+  background: #06031a;
+}
+
+h1 {
+  font-family: "Unbounded", sans-serif;
+}
+
+p {
+  font-family: "Manrope", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  padding-top: 30px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 35px;
+}
+
+.logo-text {
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.logo-span {
+  padding: 4px;
+}
+
+.gradient-text-logo {
+  background: linear-gradient(#8b5cf6, #d3c5ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #8b5cf6, #d3c5ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.header__btn {
+  border: 1px solid #8466ff;
+  border-radius: 30px;
+  padding: 12px 20px;
+}
+
+.btn-header {
+  text-decoration: none;
+  color: #d3c5ff;
+  font-size: 15px;
+}
+
+.hero__content {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.orb {
+  width: 1100px;
+  height: 1100px;
+  border-radius: 50%;
+  border: 2px solid #8466ff;
+  background: radial-gradient(circle at 50% 30%, #3a1ba8 0%, #0c0630 65%);
+  box-shadow:
+    0 0 180px #6d3ff0bb,
+    inset 0 0 140px #7c5cf055;
+  animation: pl 6s ease-in-out infinite;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: -593px;
+  margin-left: -550px;
+  z-index: -1;
+}
+
+.hero__mini {
+  color: #a78bfa;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.hero__mini1 {
+    font-size: 13px;
+    color: #a78bfa;;
+    text-align: center;
+  }
+
+.mini-gap {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.hero__title {
+  color: white;
+  font-size: 90px;
+  line-height: 1.05;
+  text-align: center;
+  padding: 25px 0 25px 0;
+}
+
+.hero__subtitle {
+  color: #d3c5ff;
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 600px;
+  text-align: center;
+}
+
+.hero__blocks {
+  display: flex;
+  gap: 15px;
+  padding: 40px 0 40px 0;
+}
+
+.hero__block {
+  background: transparent;
+  border: 1px solid #5f4ba8;
+  backdrop-filter: blur(5px);
+  width: fit-content;
+  padding: 10px 30px;
+  border-radius: 30px;
+  
+}
+
+.block-pd {
+  color: white;
+  font-size: 25px;
+}
+
+.hero__btn {
+  color: #311791;
+  background: white;
+  padding: 18px 40px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  width: fit-content;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hero__jobs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  padding-top: 120px;
+}
+
+.hero__subtitle-2 {
+  color: #d3c5ff;
+  font-size: 17px;
+  font-weight: 400;
+  max-width: 500px;
+  padding-top: 15px;
+}
+
+.mini-gap-2 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.hero__title-2 {
+  color: white;
+  font-size: 45px;
+}
+
+/* Вся секция: слева карточка, справа список */
+.works {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 36px;
+  padding-bottom: 100px;
+}
+
+/* ---------- ЛЕВАЯ БОЛЬШАЯ КАРТОЧКА ---------- */
+.card {
+  display: grid;                 /* вместо position: relative */
+  width: 100%;
+  /* строку aspect-ratio удали: высоту карточки теперь задаёт содержимое */
+  background: #120b34;
+  border: 1px solid #2b1f63;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* Каждый слайд лежит поверх остальных на одном месте и по умолчанию невидим */
+.slide {
+  grid-area: 1 / 1;              /* все слайды стоят в одной ячейке друг над другом */
+  display: flex;
+  flex-direction: column;
+  padding: 14px 14px 0;          /* отступ, чтобы скруглённые углы не резали картинку */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+/* Видим только слайд с классом is-active */
+.slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;                  /* картинка сохраняет свою пропорцию, ничего не режется */
+  display: block;
+  border-radius: 18px;
+}
+
+/* Нижняя строка: номер, название, кнопка */
+.cap {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 30px;
+}
+
+.cap p {
+  font-size: 16px;
+}
+.num {
+  font-size: 12px;
+  color: #9d92d4;
+}
+.cap__title {
+  color: white;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 14px 26px;
+  border-radius: 99px;
+  border: 1px solid #5b3fc4;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* ---------- ПРАВЫЙ СПИСОК ---------- */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid #2b1f63;
+  padding: 20px 0;
+  min-height: 44px;
+  color: #a79fcb;
+  cursor: pointer;
+}
+
+.item .plus {
+  font-size: 24px;
+  color: #a78bfa;
+}
+
+/* Выбранный проект в списке подсвечен */
+.item.is-active {
+  color: #fff;
+}
+
+.marquee {
+  overflow: hidden;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px 100px 40px;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite; /* 25s = скорость: больше число, медленнее */
+  padding: 20px 0;
+  border-top: 1px solid #2b1f63;
+  border-bottom: 1px solid #2b1f63;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 10px; /* равен gap, чтобы стык групп был ровным */
+  font-family: "Unbounded", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: #fff;
+}
+.ac {
+  color: #a78bfa;
+}
+.group i {
+  font-style: normal;
+  font-family: "Unbounded", sans-serif;
+  color: #a78bfa;
+}
+
+/* Сама анимация: сдвиг ровно на половину ленты (то есть на одну группу) */
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.landing {
+  max-width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  padding-bottom: 120px;
+}
+
+.tab-buttons {
+  padding-top: 25px;
+  display: flex;
+  
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.tab-btn {
+  background-color: transparent;
+  color: #d3c5ff;
+  border: 1px solid #4a37a0;
+  padding: 16px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+/* Выбранная вкладка: белая заливка */
+.tab-btn.is-active {
+  background: #fff;
+  color: #1a0b55;
+  border-color: #fff;
+}
+
+.box {
+  background: #120b34;
+  border: 1px solid #2b1f63;
+  border-radius: 30px;
+  padding: 34px;
+}
+
+/* По умолчанию все панели скрыты */
+.panel {
+  display: none;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+}
+/* Показываем только ту, у которой есть is-active */
+.panel.is-active {
+  display: grid;
+}
+
+.check,
+.price {
+  color: #fff;
+}
+
+.ckoro {
+  color: white;
+  font-size: 100px;
+}
+
+/* Список с фиолетовыми кружками-галочками */
+.check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #ffffff17;
+  font-size: 16px;
+}
+.check:last-child {
+  border-bottom: 0;
+}
+.check::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex: none;
+  background: #fff;
+  box-shadow:
+    inset 0 0 0 5px #8b5cf6,
+    inset 0 0 0 9px #fff;
+}
+
+.term {
+  color: #d3c5ff;
+  font-size: 16px;
+}
+
+.price {
+  font-size: 43px;
+}
+
+.projects {
+  border-top: 1px solid #2b1f63;
+  border-bottom: 1px solid #2b1f63;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  text-align: center;
+  padding: 75px 0 75px 0;
+}
+
+.project__title {
+  font-size: 80px;
+  color: white;
+}
+
+.project__subtitle {
+  color: #d3c5ff;
+}
+
+.process {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 40px 120px 40px;
+}
+
+.processing {
+  padding-bottom: 30px;
+}
+
+.step__title {
+  color: white;
+  font-size: 25px;
+}
+
+.step__subtitle {
+  color: #d3c5ff;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.step__subtitl {
+  color: #a79fcb;
+  font-size: 17px;
+  padding-top: 10px;
+}
+
+.step {
+  max-width: 600px;
+  margin: 0 auto 0 20px;
+  padding: 0;
+  list-style: none;
+  border-left: 2px solid #3b2a85;
+}
+
+.step__block {
+  position: relative;
+  padding: 0 0 38px 40px;
+}
+
+.step__block:last-child {
+  padding-bottom: 0;
+}
+
+/* КРУЖОК: рисуем псевдоэлементом ::before, отдельный тег не нужен */
+.step__block::before {
+  content: "";
+  position: absolute;
+  left: -9px; /* -9px = половина кружка (16px) + половина линии (2px) */
+  top: 6px; /* высота кружка относительно шага */
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  box-shadow: 0 0 20px #8b5cf6; /* неоновое свечение */
+}
+
+.studio {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  perspective: 1000px; 
+}
+
+.studio__title {
+  max-width: 500px;
+}
+
+.studio__subtitle {
+  color: #a79fcb;
+  max-width: 500px;
+  padding-top: 20px;
+}
+
+.studio__btn {
+  background-color: transparent;
+  color: #d3c5ff;
+  border: 1px solid #4a37a0;
+  padding: 10px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+  width: fit-content;
+}
+
+.studio__button {
+  padding-top: 30px;
+}
+
+.studio__flex {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.flex-1 {
+  display: flex;
+  gap: 10px;
+}
+
+.flex-2 {
+  display: flex;
+  gap: 10px;
+}
+
+.studio__card {
+  background: linear-gradient(135deg, #3a1ba8 0%, #5b3fc4 100%);
+  border-radius: 30px;
+  height: 300px;
+  width: 300px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  rotate: -1deg;
+  box-shadow: 0 0 60px 10px rgba(106, 49, 255, 0.4);
+  /* Исходный наклон, который был у вас */
+  transform: rotateZ(-4deg); 
+  
+  /* Важно: transform-style для сохранения 3D пространства */
+  transform-style: preserve-3d;
+  
+  /* Плавный возврат в исходное положение, когда мышь уходит */
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+.card__title {
+  color: white;
+}
+
+.card__subtitle {
+  color: white;
+  font-size: 12px;
+  padding: 5px 0 5px 0;
+}
+
+.card__subtitle-2 {
+  color: white;
+  font-size: 13px;
+}
+
+.studio__logo {
+  width: 60px;
+}
+
+@media (hover: hover) {
+  .studio__card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 80px 20px rgba(106, 49, 255, 0.6);
+  }
+}
+
+.faq {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 150px 40px 0 40px;
+}
+
+.faq-contanier {
+  padding-top: 30px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #2b1f63;
+    padding: 0 0 15px 0;
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Иконка плюсика */
+.faq-plus {
+    width: 15px;
+    height: 15px;
+    position: relative;
+}
+
+.faq-plus::before, .faq-plus::after {
+    content: '';
+    position: absolute;
+    background-color: #a78bfa;
+    transition: 0.3s;
+    
+}
+
+/* Горизонтальная палочка */
+.faq-plus::before {
+    width: 100%;
+    height: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Вертикальная палочка */
+.faq-plus::after {
+    width: 3px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Стили для открытого вопроса */
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Достаточно для текста */
+    padding-bottom: 20px;
+}
+
+.faq-item.active .faq-plus::after {
+    transform: translateX(-50%) rotate(90deg); /* Поворачиваем, чтобы сделать минус */
+    opacity: 0;
+}
+
+.faq-answer {
+    max-height: 0; /* Изначально скрыт */
+    overflow: hidden;
+    transition: all 0.4s ease;
+    color: #9ca3af;
+    line-height: 1.6;
+}
+
+.faq__title {
+  color: white;
+  font-size: 18px;
+}
+
+.faq-answer {
+  color: #a79fcb;
+}
+
+.cta {
+  position: relative;
+  margin: 0 auto;
+  padding: 300px 0 100px 0px;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 100%, #5b2fd6 0%, #2a1470 38%, transparent 72%);
+}
+
+.cta__title {
+  color: white;
+  font-size: 55px;
+}
+
+.cta__subtitle {
+  color: #9ca3af;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.cta__input {
+  background: #120b34;
+  padding: 18px 100px 18px 30px;
+  border: 1px solid #8466ff;
+  font-size: 18px;
+  color: white;
+  border-radius: 30px;
+  outline: none;
+}
+
+.input-cta {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cta__button {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.footer {
+  max-width: 1200px;
+  padding: 30px 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__title {
+  color: #9ca3af;
+}
+
+.footer__title, .email-link {
+  text-decoration: none;
+  color: #9ca3af;
+}
+
+/* Контейнер формы */
+.tg-form {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Статус отправки под формой */
+.tg-status {
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tg-status {
+  position: absolute;
+  right: 0px;
+  bottom: 60px;
+  font-size: 18px;
+}
+
+.slide p {
+    font-size: 16px;
+  }
+
+
+@media (max-width: 950px) {
+  .cap__title {
+    font-size: 20px;
+  }
+  
+  .slide p {
+    font-size: 12px;
+  }
+
+  .btn {
+  min-height: 48px;
+  padding: 5px 16px;
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.cap p {
+  font-size: 15px;
+}
+  
+.cap {
+  padding: 10px 10px;
+}
+
+.studio { 
+  flex-direction: column;
+}
+
+.studio__card {
+  margin: 100px auto;
+}
+
+.project__title {
+  font-size: 60px;
+}
+}
+
+/* Планшет: карточка и список в одну строку */
+@media (min-width: 769px) and (max-width: 950px) {
+    .works {
+        width: 100%;
+        max-width: 1200px;
+        padding: 40px 24px 90px;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr) !important;
+        gap: 28px;
+        align-items: center;
+    }
+
+    .card {
+        width: 100% !important;
+        min-width: 0;
+        aspect-ratio: 16 / 11;
+    }
+
+    .list {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .slide > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cap {
+        padding: 16px 20px;
+    }
+
+    .cap__title {
+        font-size: 24px;
+    }
+
+    .cap .btn {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .item {
+        padding: 16px 0;
+    }
+
+    .item h1 {
+        font-size: 23px;
+    }
+
+    .item p {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+
+    .faq {
+      padding: 420px 40px 0 40px;
+    }
+
+    .tab-btn {
+      padding: 14px 26px;
+      font-size: 15px;
+    }
+
+    .price {
+      font-size: 38px;
+    }
+
+    .studio {
+      position: relative;
+    }
+
+    .studio__card {
+      position: absolute;
+      top: 250px;
+      padding: 30px;
+      rotate: 4deg;
+    }
+    
+}
+
+/* На телефоне снова друг под другом */
+@media (max-width: 768px) {
+    .works {
+        display: flex !important;
+        flex-direction: column;
+        padding: 40px 20px 80px;
+    }
+
+    .studio {
+      position: relative;
+    }
+
+    .studio__card {
+      position: absolute;
+      top: 250px;
+      padding: 30px;
+      rotate: 4deg;
+    }
+
+    .faq {
+      padding: 420px 40px 0 40px;
+    }
+
+    .card,
+    .list {
+        width: 100%;
+    }
+    
+    .price {
+      font-size: 32px;
+    }
+
+    .cta__input {
+      font-size: 15px;
+      padding: 18px 60px 18px 20px;
+    }
+
+    .project__title {
+      font-size: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+  .price {
+    font-size: 24px;
+  }
+  
+  .tab-btn {
+    margin-right: 5px;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .studio__flex {
+    flex-direction: column;
+  }
+
+  .footer__title, .email-link {
+    font-size: 14px;
+  }
+
+  .project__title {
+    font-size: 30px;
+  }
+  .project__subtitle {
+    font-size: 13px;
+  }
+.studio {
+      position: relative;
+    }
+
+    .studio__card {
+      position: absolute;
+      top: 200px;
+      padding: 30px;
+      rotate: 4deg;
+    }
+
+    .faq {
+      padding: 400px 40px 0 40px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+  .orb {
+  width: 1100px;
+  height: 1100px;
+  border-radius: 50%;
+  border: 2px solid #8466ff;
+  background: radial-gradient(circle at 50% 30%, #3a1ba8 0%, #0c0630 65%);
+  box-shadow:
+    0 0 180px #6d3ff0bb,
+    inset 0 0 140px #7c5cf055;
+  animation: pl 6s ease-in-out infinite;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: -1000px;
+  margin-left: -550px;
+  z-index: -1;
+}
+
+  .studio {
+      position: relative;
+    }
+
+    .studio__card {
+      position: absolute;
+      top: 300px;
+      padding: 30px;
+      rotate: 4deg;
+    }
+
+    .faq {
+      padding: 400px 40px 0 40px;
+    }
+
+  .input-cta {
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+  }
+
+  .footer__title {
+    max-width: 150px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .logo-img {
+    width: 28px;
+  }
+
+  .btn-header {
+    font-size: 12px;
+  }
+
+  .header__btn {
+    padding: 10px 16px;
+  }
+
+  .hero__mini1 {
+    font-size: 11px;
+    color: #a78bfa;;
+    text-align: center;
+    max-width: 330px;
+  }
+
+  .hero__mini {
+    font-size: 12px;
+    color: #a78bfa;
+    max-width: 330px;
+  }
+
+  .hero__title {
+    font-size: 50px;
+  }
+
+  .hero__subtitle {
+    max-width: 360px;
+  }
+  
+  .hero__blocks {
+    gap: 10px;
+  }
+
+  .hero__blocks {
+    padding: 20px 0px;
+  }
+
+  .block-pd {
+    font-size: 17px;
+    padding: 0 0;
+    text-align: center;
+  }
+
+  .hero__btn {
+    font-size: 15px;
+  }
+
+  .hero__jobs {
+    padding: 0 20px;
+    padding-top: 120px;
+  }
+
+  .hero__title-2 {
+    font-size: 30px;
+}
+
+  .group {
+    font-size: 20px;
+  }
+
+  .list h1 {
+    font-size: 20px;
+  }
+
+  .landing {
+    padding: 0 0 0 20px ;
+    padding-bottom: 120px;
+  }
+
+  .tab-btn {
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+  }
+
+  .panel {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .box {
+    padding: 15px 20px;
+  }
+
+  .check {
+    font-size: 14px;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project__title {
+    font-size: 60px;
+  }
+
+  .step__title {
+    font-size: 22px;
+  }
+
+  .step__subtitle {
+    font-size: 16px;
+  }
+
+  .step__block {
+  position: relative;
+  padding: 0 0 10px 40px;
+  }
+
+  .flex-2, .flex-1 {
+    display: flex;
+    gap: 5px;
+  }
+
+  .studio__btn {
+    font-size: 13px;
+  }
+
+  .faq-answer {
+    font-size: 15px;
+  }
+
+  .cta__title {
+    font-size: 35px;
+  }
+
+  .cta__subtitle {
+    font-size: 15px;
+  }
+
+  .input-cta {
+    align-items: center;
+  }
+
+  .header{
+    padding: 0 30px;
+  padding-top: 20px;
+  }
+}
