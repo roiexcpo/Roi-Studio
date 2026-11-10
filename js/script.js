@@ -119,8 +119,8 @@ faqItems.forEach(item => {
 });
 
 
-const BOT_TOKEN = '9169938265:AAHQCTNWdvP7ak-ctpo0GJxAaUgWUpLBHgs';
-const CHAT_ID = '7908608097';
+// 🛑 ВСТАВЬ СЮДА ССЫЛКУ, КОТОРУЮ СКОПИРОВАЛ ИЗ GOOGLE (в кавычках)
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxZ9d1X5QZHd3-aNiNRsIR7IR64gwmeOv4Cc23I8DmWttgVG-tUDaVBQlnHSgbQ0w_t/exec';
 
 const tgForm = document.getElementById('tgForm');
 const phoneInput = document.getElementById('phoneInput');
@@ -138,38 +138,19 @@ tgForm.addEventListener('submit', async function (event) {
         return;
     }
 
-    const message = `
-🚀 <b>Новая заявка с сайта!</b>
-
-📞 <b>Контакт:</b> ${contact}
-⏰ <b>Время:</b> ${new Date().toLocaleString('ru-RU')}
-`;
-
     tgSubmitBtn.disabled = true;
     tgSubmitBtn.textContent = 'Отправка...';
     tgStatus.textContent = '';
 
     try {
-        const response = await fetch(
-            `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    chat_id: CHAT_ID,
-                    text: message,
-                    parse_mode: 'HTML'
-                })
-            }
-        );
-
-        const result = await response.json();
-
-        if (!result.ok) {
-            throw new Error(result.description);
-        }
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // Обходит любые проблемы с CORS в браузерах!
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ contact: contact })
+        });
 
         tgStatus.style.color = '#2ecc71';
         tgStatus.textContent = 'Заявка успешно отправлена!';
@@ -178,23 +159,10 @@ tgForm.addEventListener('submit', async function (event) {
     } catch (error) {
         tgStatus.style.color = '#ff4d4d';
         tgStatus.textContent = 'Ошибка отправки заявки';
-        console.error(error);
+        console.error('Ошибка:', error);
 
     } finally {
         tgSubmitBtn.disabled = false;
         tgSubmitBtn.textContent = 'Получить расчет →';
     }
-});
-
-const heroButton = document.querySelector('.hero__btn');
-
-heroButton.addEventListener('click', function (event) {
-    event.preventDefault();
-
-    document.querySelector('#cta').scrollIntoView({
-        behavior: 'smooth'
-    });
-
-    // Убираем #cta из адреса
-    history.replaceState(null, '', window.location.pathname);
 });
