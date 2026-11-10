@@ -1209,4 +1209,9 @@ p {
   .cta {
   padding: 100px 0 75px 0px;
   }
+
+  .tg-status {
+    bottom: 34px;
+    font-size: 12px;
+  }
 }
