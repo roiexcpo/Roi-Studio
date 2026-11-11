@@ -24,32 +24,33 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__logo">
+        <div class="header__logo" data-aos="fade-down" data-aos-duration="800">
             <img src="image/logo.png" class="logo-img">
             <h1 class="logo-text">Roi <span class="gradient-text-logo logo-span">Studio</span></h1>
         </div>
-        <div class="header__btn">
+        <div class="header__btn" data-aos="fade-down" data-aos-duration="800">
             <a class="btn-header" href="https://t.me/RoiWorks"><p>Telegram: @RoiWorks</p></a>
         </div>
     </header>
     <section class="hero">
         <div class="hero__content">
             <h2 class="orb"></h2>
-            <p class="hero__mini1">Д И З А Й Н <span class="mini-gap">+</span> Р А З Р А Б О Т К А <span class="mini-gap">·</span> W E B D E V E L O P M E N T <span class="mini-gap">&</span> D E S I G N</p>
-            <h1 class="hero__title">Лендинг<br><span class="gradient-text">под ключ</span></h1>
-            <p class="hero__subtitle">Макет в Figma, вёрстка, форма заявки в ваш Telegram и запуск на вашем домене. Готовый сайт, а не картинка.</p>
+            <p class="hero__mini1" data-aos="fade-up" data-aos-duration="800">Д И З А Й Н <span class="mini-gap">+</span> Р А З Р А Б О Т К А <span class="mini-gap">·</span> W E B D E V E L O P M E N T <span class="mini-gap">&</span> D E S I G N</p>
+            <h1 class="hero__title" data-aos="zoom-in" data-aos-duration="600">Лендинг<br><span class="gradient-text">под ключ</span></h1>
+            <p class="hero__subtitle" data-aos="fade-down" data-aos-duration="800">Макет в Figma, вёрстка, форма заявки в ваш Telegram и запуск на вашем домене. Готовый сайт, а не картинка.</p>
             <div class="hero__blocks">
-                <div class="hero__block">
+                <div class="hero__block" data-aos="fade-right" data-aos-duration="800">
                     <h1 class="block-pd">от 6 000 ₽</h1>
                 </div>
-                <div class="hero__block">
+                <div class="hero__block" data-aos="fade-left" data-aos-duration="800">
                     <h1 class="block-pd">за 2 дня</h1>  
                 </div>
             </div>
-            <a class="hero__btn" href="#cta"><p>Получить расчёт стоимости →</p></a>
+            
+            <a class="hero__btn" href="#cta" data-aos="zoom-in" data-aos-duration="600"><p>Получить расчёт стоимости →</p></a>
         </div>
     </section>
-    <div class="hero__jobs">
+    <div class="hero__jobs" data-aos="fade-right" data-aos-duration="400">
             <p class="hero__mini">И З Б Р А Н Н Ы Е<span class="mini-gap-2"></span>П Р О Е К Т Ы</p>
             <h1 class="hero__title-2">Работы, которыми <span class="gradient-text">гордимся</span></h1>
             <p class="hero__subtitle-2">Три проектов из портфолио, продуктовые лендинги с разной визуальной подачей.</p>
@@ -57,7 +58,7 @@
     <section class="works">
 
         <!-- ===== ЛЕВАЯ КАРТОЧКА: по одному слайду на проект ===== -->
-        <div class="card">
+        <div class="card" data-aos="fade-right" data-aos-duration="800">
 
             <!-- data-project="1" связывает этот слайд с кнопкой "1" в списке справа -->
             <div class="slide is-active" data-project="1">
@@ -91,7 +92,7 @@
         </div>
 
         <!-- ===== ПРАВЫЙ СПИСОК: по одной кнопке на проект ===== -->
-        <ul class="list">
+        <ul class="list" data-aos="fade-left" data-aos-duration="800">
             <li>
                 <button class="item is-active" data-project="1" aria-pressed="true">
                     <span><h1>Coffe</h1><p>Адаптивный лендинг для кофейни "Bean Scene" (Дизайн + Верстка + ТГбот)</p></span>
@@ -143,16 +144,16 @@
             </div>
         </div>
     <section class="landing">
-        <p class="hero__mini">В Ы Б Е Р И Т Е<span class="mini-gap-2"></span>З А Д А Ч У</p>
-        <h1 class="hero__title-2">Что вам <span class="gradient-text">нужно?</span></h1>
+        <p class="hero__mini" data-aos="fade-right" data-aos-duration="400">В Ы Б Е Р И Т Е<span class="mini-gap-2"></span>З А Д А Ч У</p>
+        <h1 class="hero__title-2" data-aos="fade-right" data-aos-duration="400">Что вам <span class="gradient-text">нужно?</span></h1>
         
         <div class="tab-buttons" role="tablist">
             <div>
-                <button class="tab-btn is-active" role="tab" aria-selected="true"  data-tab="landing"><p>Лендинг</p></button>
-                <button class="tab-btn"           role="tab" aria-selected="false" data-tab="landing-key"><p>Лендинг под ключ</p></button>
+                <button class="tab-btn is-active" role="tab" aria-selected="true"  data-tab="landing" data-aos="zoom-in" data-aos-duration="500"><p>Лендинг</p></button>
+                <button class="tab-btn"           role="tab" aria-selected="false" data-tab="landing-key" data-aos="zoom-in" data-aos-duration="750"><p>Лендинг под ключ</p></button>
             </div>
             <div>
-                <button class="tab-btn"           role="tab" aria-selected="false" data-tab="redesign"><p>Редизайн</p></button>
+                <button class="tab-btn"           role="tab" aria-selected="false" data-tab="redesign" data-aos="zoom-in" data-aos-duration="1000"><p>Редизайн</p></button>
             </div>
             <div>
                 <!-- <button class="tab-btn tab-site"           role="tab" aria-selected="false" data-tab="site"><p>Многостраничный сайт - СКОРО</p></button>
@@ -160,13 +161,13 @@
             </div>
         </div>
         <div class="panel is-active" data-tab="landing" role="tabpanel">
-            <div class="box">
+            <div class="box" data-aos="zoom-in" data-aos-duration="600">
                 <p class="check">Верстка по готовому макету + анимации (AOS)</p>
                 <p class="check">Адаптив под все экраны</p>
                 <p class="check">Форма заявки в Telegram</p>
                 <p class="check">Домен и запуск</p>
             </div>
-            <div class="box">
+            <div class="box" data-aos="zoom-in" data-aos-duration="1200">
                 <p class="hero__mini">Л Е Н Д И Н Г</p>
                 <h1 class="price">от 3 500 ₽</h1>
                 <p class="term">за 2-3 дня</p>
@@ -231,41 +232,41 @@
     </section>
 
     <section class="projects">
-        <div class="project">
+        <div class="project" data-aos="fade-right" data-aos-duration="600">
             <h1 class="project__title gradient-text">3</h1>
             <p class="project__subtitle">завершённых проектов</p>
         </div>
-        <div class="day">
+        <div class="day" data-aos="zoom-in" data-aos-duration="600">
             <h1 class="project__title"><span class="gradient-text">2-3</span> дня</h1>
             <p class="project__subtitle">средний срок запуска</p>
         </div>
-        <div class="oval">
+        <div class="oval" data-aos="fade-left" data-aos-duration="600">
             <h1 class="project__title"><span class="gradient-text">2</span> круга</h1>
             <p class="project__subtitle">правок включено в цену</p>
         </div>
     </section>
     <section class="process">
-        <div class="processing">
+        <div class="processing" data-aos="fade-right" data-aos-duration="400">
             <p class="hero__mini">П Р О Ц Е С С</p>
             <h1 class="hero__title-2">Как происходит <span class="gradient-text">разработка</span></h1>
         </div>
         <div class="step">
-            <div class="step__block">
+            <div class="step__block" data-aos="zoom-in" data-aos-duration="400">
                 <p class="hero__mini">Ш А Г<span class="mini-gap-2"></span>0 1</p>
                 <h1 class="step__title">Заявка и обсуждение</h1>
                 <p class="step__subtitle">Вы присылаете задачу или референсы — я рассчитываю точную стоимость и фиксирую сроки.</p>
             </div>
-            <div class="step__block">
+            <div class="step__block" data-aos="zoom-in" data-aos-duration="500">
                 <p class="hero__mini">Ш А Г<span class="mini-gap-2"></span>0 2</p>
                 <h1 class="step__title">Дизайн и структура</h1>
                 <p class="step__subtitle">Создаю удобный макет в Figma, подбираем стиль и утверждаем все детали.</p>
             </div>
-            <div class="step__block">
+            <div class="step__block" data-aos="zoom-in" data-aos-duration="600">
                 <p class="hero__mini">Ш А Г<span class="mini-gap-2"></span>0 3</p>
                 <h1 class="step__title">Вёрстка и интерактив</h1>
                 <p class="step__subtitle">Переношу дизайн в чистый код, настраиваю адаптив под мобилки, анимации и отправку заявок в Telegram.</p>
             </div>
-            <div class="step__block">
+            <div class="step__block" data-aos="zoom-in" data-aos-duration="700">
                 <p class="hero__mini">Ш А Г<span class="mini-gap-2"></span>0 4</p>
                 <h1 class="step__title">Тестирование и запуск</h1>
                 <p class="step__subtitl">Проверяю работу сайта на всех смартфонах и ПК, привязываю домен — ваш сайт готов к приёму клиентов!</p>
@@ -274,23 +275,23 @@
     </section>
     <section class="studio">
         <div class="studio__block">
-            <p class="hero__mini">О<span class="mini-gap-2"></span>С Т У Д И И</p>
-            <h1 class="hero__title-2 studio__title">Кто стоит за <span class="gradient-text">Roi Studio</span></h1>
-            <p class="studio__subtitle">Создаю современные адаптивные лендинги с чистым кодом и плавной анимацией. Помогаю бизнесу упаковать продукт и подключаю приём заявок прямо в Telegram.</p>
+            <p class="hero__mini" data-aos="fade-right" data-aos-duration="400">О<span class="mini-gap-2"></span>С Т У Д И И</p>
+            <h1 class="hero__title-2 studio__title" data-aos="fade-right" data-aos-duration="400">Кто стоит за <span class="gradient-text">Roi Studio</span></h1>
+            <p class="studio__subtitle" data-aos="zoom-in" data-aos-duration="600">Создаю современные адаптивные лендинги с чистым кодом и плавной анимацией. Помогаю бизнесу упаковать продукт и подключаю приём заявок прямо в Telegram.</p>
             <div class="studio__button">
                 <div class="studio__flex">
                     <div class="flex-1">
-                        <p class="studio__btn">Figma</p>
-                        <p class="studio__btn">Адаптивная верстка</p>
+                        <p class="studio__btn" data-aos="fade-right" data-aos-duration="700">Figma</p>
+                        <p class="studio__btn" data-aos="fade-right" data-aos-duration="400">Адаптивная верстка</p>
                     </div>
                     <div class="flex-2">
-                        <p class="studio__btn">UI/UX Design</p>    
-                        <p class="studio__btn">Анимаци & Интерактив</p>
+                        <p class="studio__btn" data-aos="fade-left" data-aos-duration="400">UI/UX Design</p>    
+                        <p class="studio__btn" data-aos="fade-left" data-aos-duration="700">Анимаци & Интерактив</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="studio__card">
+        <div class="studio__card" data-aos="zoom-in" data-aos-duration="400">
             <img class="studio__logo" src="image/logo.png">
             <div>
                 <h1 class="card__title">Roi Studio</h1>
@@ -300,59 +301,59 @@
         </div>
     </section>
     <section class="faq">
-        <div class="faq__text">
+        <div class="faq__text" data-aos="fade-right" data-aos-duration="400">
             <p class="hero__mini">В О П Р О С Ы</p>
             <h1 class="hero__title-2 studio__title">Частые <span class="gradient-text">вопросы</span></h1>
         </div>
         <div class="faq-contanier">
             <div class="faq-item">
-                <div class="faq-question">
+                <div class="faq-question" data-aos="zoom-in" data-aos-duration="400">
                     <h1 class="faq__title">Сколько это стоит?</h1>
                     <div class="faq-plus"></div>
                 </div>
                 <div class="faq-answer">
-                    <p>Вёрстка по готовому макету — от 3 500 ₽, разработка под ключ — от 7 000 ₽. Точную стоимость называю сразу после изучения задачи.</p>
+                    <p data-aos="fade-up" data-aos-duration="1400">Вёрстка по готовому макету — от 3 500 ₽, разработка под ключ — от 7 000 ₽. Точную стоимость называю сразу после изучения задачи.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">
+                <div class="faq-question" data-aos="zoom-in" data-aos-duration="500">
                     <h1 class="faq__title">Как быстро будет готово?</h1>
                     <div class="faq-plus"></div>
                 </div>
                 <div class="faq-answer">
-                    <p>В среднем запуск занимает 2–3 дня с момента согласования структуры и материалов.</p>
+                    <p data-aos="fade-up" data-aos-duration="1400">В среднем запуск занимает 2–3 дня с момента согласования структуры и материалов.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">
+                <div class="faq-question" data-aos="zoom-in" data-aos-duration="600">
                     <h1 class="faq__title">Что нужно от меня?</h1>
                     <div class="faq-plus"></div>
                 </div>
                 <div class="faq-answer">
-                    <p>Описание задачи, тексты и фото (если есть), а также примеры сайтов, которые вам нравятся. Если материалов нет — помогу всё составить.</p>
+                    <p data-aos="fade-up" data-aos-duration="1400">Описание задачи, тексты и фото (если есть), а также примеры сайтов, которые вам нравятся. Если материалов нет — помогу всё составить.</p>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">
+                <div class="faq-question" data-aos="zoom-in" data-aos-duration="700">
                     <h1 class="faq__title">Что будет после запуска?</h1>
                     <div class="faq-plus"></div>
                 </div>
                 <div class="faq-answer">
-                    <p>Передаю доступы и архив с файлами. Бесплатно консультирую и сопровождаю сайт первые 2 недели после сдачи.</p>
+                    <p data-aos="fade-up" data-aos-duration="1400">Передаю доступы и архив с файлами. Бесплатно консультирую и сопровождаю сайт первые 2 недели после сдачи.</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="cta" id="cta">
         <div class="cta__text">
-            <h1 class="cta__title">
+            <h1 class="cta__title" data-aos="zoom-in" data-aos-duration="600">
                 Узнайте цену вашего сайта<span class="gradient-text"> сегодня</span>
             </h1>
-            <p class="cta__subtitle">
+            <p class="cta__subtitle" data-aos="zoom-in" data-aos-duration="400">
                 Оставьте контакт. Расчёт придёт в Telegram.
             </p>
             <form class="input-cta" id="tgForm">
-                <input
+                <input data-aos="fade-right" data-aos-duration="400"
                     class="cta__input"
                     id="phoneInput"
                     type="text"
@@ -360,7 +361,7 @@
                     required
                 >
 
-                <button type="submit" class="cta__button hero__btn" id="tgSubmitBtn">
+                <button type="submit" class="cta__button hero__btn" id="tgSubmitBtn" data-aos="fade-left" data-aos-duration="400">
                     Получить расчет →
                 </button>
                 <h1 id="tgStatus" class="tg-status"></h1>
